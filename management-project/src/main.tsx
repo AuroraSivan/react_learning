@@ -1,9 +1,27 @@
 import { StrictMode } from 'react'
 import { createRoot } from 'react-dom/client'
+//样式初始化一般放在最前面
+import "reset-css"
+//UI框架的样式
+
+//全局样式
+import '@/assets/styles/global.scss'
+//组件的样式
 import App from './App.tsx'
+import Router from './router'
+import {BrowserRouter} from 'react-router-dom'
 
 createRoot(document.getElementById('root')!).render(
   <StrictMode>
-    <App />
+    <BrowserRouter>
+      <App />
+    </BrowserRouter>
   </StrictMode>
 )
+
+//组件式路由
+/*createRoot(document.getElementById('root')!).render(
+  <StrictMode>
+    <Router />
+  </StrictMode>
+)*/
